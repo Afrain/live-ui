@@ -1,0 +1,43 @@
+<h1 mat-dialog-title style="color: blue; text-align: center;">Nova Live</h1>
+<div mat-dialog-content>
+  <form class="example-form" [formGroup]="liveForm">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nome Live</mat-label>
+      <input matInput formControlName="nomeLive" name="nomeLive" maxlength="40">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Nome Canal</mat-label>
+      <input matInput formControlName="nomeCanal" name="nomeCanal" maxlength="30">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Link Live</mat-label>
+      <input matInput formControlName="linkLive" name="linkLive" maxlength="70">
+    </mat-form-field>
+
+    <div fxLayout="row wrap">
+      <div fxFlex="45" fxFill fxLayoutAlign="start center">
+          <mat-form-field class="example-full-width">
+              <mat-label>Data da Live</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="dataLive">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+      </div>
+      <div fxFlex></div>
+      <div fxFlex="45" fxFill fxLayoutAlign="start center">
+          <mat-form-field class="example-full-width">
+              <mat-label>Horário da Live</mat-label>
+              <input matInput type="time" placeholder="" formControlName="horaLive" #time/>
+          </mat-form-field>
+      </div>
+
+    </div>
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="salvarLive()" [disabled]="liveForm.invalid">Adicionar</button>
+  <button mat-button (click)="cancelar()">Cancelar</button>
+</div>
