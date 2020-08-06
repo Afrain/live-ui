@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment.prod';
 import { Live } from 'src/app/shared/model/live.model';
 import { ResponsePageable } from './../model/responsePageable.model';
 import { Injectable } from '@angular/core';
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class LiveService {
 
-  apiUrl = 'http://localhost:8080/live';
+  apiUrl = environment.apiUrl + 'live';
 
   httpOptions = {
     headers: new HttpHeaders({
