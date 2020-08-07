@@ -1,5 +1,5 @@
 <mat-tab-group style="padding-top: 40px; padding-left: 2%; padding-right: 2%;">
-  <mat-tab label="PRÓXIMAS">
+  <mat-tab label="Próximas">
     <mat-progress-bar *ngIf="!progressBarLivesNext" mode="indeterminate"></mat-progress-bar>
     <div fxLayout="row wrap" fxLayoutAlign="start center" style="padding: 2%;">
       <ng-container *ngFor="let live of livesNext" style="margin: 0.5%;">
@@ -23,7 +23,7 @@
             </mat-card-title>
             <mat-card-content fxLayoutAlign="center center">
               <div>
-                <iframe width="420" height="300" [src]="live.urlSafe" frameborder="0"
+                <iframe width="410" height="290" [src]="live.urlSafe" frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </mat-card-content>
@@ -33,7 +33,7 @@
     </div>
   </mat-tab>
 
-  <mat-tab label="PRÓXIMAS">
+  <mat-tab label="Realizadas">
     <mat-progress-bar *ngIf="!progressBarLivesNext" mode="indeterminate"></mat-progress-bar>
     <div fxLayout="row wrap" fxLayoutAlign="start center" style="padding: 2%;">
       <ng-container *ngFor="let live of livesPrevious" style="margin: 0.5%;">
@@ -57,7 +57,7 @@
             </mat-card-title>
             <mat-card-content fxLayoutAlign="center center">
               <div>
-                <iframe width="420" height="300" [src]="live.urlSafe" frameborder="0"
+                <iframe width="410" height="290" [src]="live.urlSafe" frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </mat-card-content>
