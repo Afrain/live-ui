@@ -1,9 +1,10 @@
 import { LiveService } from './../../../shared/service/live.service';
 import { Component, OnInit } from '@angular/core';
 
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+import Swal from 'sweetalert2';
 import * as moment from 'moment';
 
 @Component({
@@ -34,11 +35,19 @@ export class LiveCadDialogComponent implements OnInit {
     this.liveForm.value.dataLive = newData.format(`YYYY-MM-DDT${this.liveForm.value.horaLive}`);
     this.liveService.postLive(this.liveForm.value)
       .subscribe(response => {
-
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Salvo com sucesso!',
+          showConfirmButton: false,
+          timer: 2000
+        });
       });
     this.dialogRef.close();
     this.liveForm.reset();
-    window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+      }, 2000);
   }
 
   cancelar(): void {

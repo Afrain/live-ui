@@ -29,6 +29,7 @@
     "@angular/router": "~9.1.0",
     "moment": "^2.27.0",
     "rxjs": "~6.5.4",
+    "sweetalert2": "^9.17.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2",
     "@angular-devkit/build-angular": "~0.901.0",

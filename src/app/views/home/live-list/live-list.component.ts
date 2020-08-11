@@ -15,6 +15,7 @@ export class LiveListComponent implements OnInit {
   livesNext: Live[];
   livesPrevious: Live[];
   urlSafe: SafeResourceUrl;
+  refreshListaLive: any = null;
 
   constructor(public liveService: LiveService,
               private sanitizer: DomSanitizer) { }
